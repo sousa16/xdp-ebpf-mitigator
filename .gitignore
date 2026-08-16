@@ -1,0 +1,40 @@
+# ── Build output ──────────────────────────────────────────────────────────
+# Makefile drops the control-plane binary at the repo root.
+/mitigator-ctl
+
+# Compiled eBPF objects, emitted next to their C sources by clang -target bpf.
+*.o
+*.bpf.o
+
+# Go build/test artifacts
+*.exe
+*.test
+*.out
+/dist/
+/bin/
+
+# ── Go tooling ────────────────────────────────────────────────────────────
+# Coverage and profiling output
+coverage.txt
+coverage.html
+*.prof
+vendor/
+
+# ── Project docs ──────────────────────────────────────────────────────────
+# Roadmap source and export are kept local, not published with the repo.
+xdp-ebpf-mitigator-roadmap.pdf
+xdp-ebpf-mitigator-roadmap.docx
+
+# Obsidian vault config for docs/ — local editor state, not project content.
+docs/.obsidian/
+
+# ── Editor / OS ───────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# ── Local agent config ────────────────────────────────────────────────────
+# Keep shared settings.json tracked; ignore per-machine overrides.
+.claude/settings.local.json
